@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Liquidacion" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="86688813-fe02-4a85-85fe-3f33cb4ae8c2">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="Clases.Foto"/>
+	<parameter name="operario" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="nombreEmpresa" class="java.lang.String"/>
+	<parameter name="direccionEmpresa" class="java.lang.String"/>
+	<parameter name="telefonoEmpresa" class="java.lang.String"/>
+	<parameter name="paisprovincia" class="java.lang.String"/>
+	<parameter name="numeroLiq" class="java.lang.String"/>
+	<parameter name="apellido" class="java.lang.String"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="documento" class="java.lang.String"/>
+	<parameter name="funcion" class="java.lang.String"/>
+	<field name="fechaLiquidado" class="java.lang.String"/>
+	<field name="numeroLiq" class="java.lang.String"/>
+	<field name="totalRendido" class="java.lang.String"/>
+	<field name="porcentaje" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="105" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="2" width="557" height="103" uuid="97560d65-18e3-49cd-9f0f-454a67d0a405"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="29" width="263" height="48" uuid="6d7f3d22-d72a-49c2-b483-f59ffbd15056"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Recibo de pago]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="263" y="74" width="100" height="20" uuid="88160f2e-5a61-4e7d-890d-6be3d0a79320"/>
+				<textElement>
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{paisprovincia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="263" y="14" width="127" height="20" uuid="0203ea33-6354-448b-a499-e49e77d388e7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="54" width="127" height="20" uuid="ef2b6998-2862-4e85-8b4e-087762d87349"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{telefonoEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="263" y="34" width="153" height="20" uuid="5a01c875-f997-4c6f-9dab-6919d70f4168"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{direccionEmpresa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="263" y="54" width="26" height="20" uuid="ee00699a-3453-4f07-ac94-7d080efc801e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Tel:]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="426" y="14" width="121" height="81" uuid="211b36e2-63d2-4442-b9ae-bbb0990223b2"/>
+				<imageExpression><![CDATA[$P{logo}.getImage()]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement x="353" y="46" width="109" height="26" uuid="2e491087-3742-4d34-924d-2898058eceb4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Liquidación:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="10" width="66" height="23" uuid="4f21af2a-36a3-4016-972e-270690eafc96"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Operario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="10" width="212" height="23" uuid="d20f4066-663e-4b81-977a-348116494758"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{operario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="49" width="66" height="23" uuid="af0ba002-208d-4172-a800-13b3e7766c6f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="72" width="66" height="23" uuid="41c7fbca-ced2-4ab6-8d64-79b3ab5d058b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="42" width="553" height="1" uuid="430243e5-cdd0-4622-ba03-4c8eed6bc26c"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="95" width="66" height="23" uuid="ef368733-351b-48d6-b17c-e1d043f59e8f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Doc:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="49" width="82" height="23" uuid="1dcc3d82-531d-4bc8-b417-46cb504e66c4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="72" width="96" height="23" uuid="8f23b832-b780-48cc-bff7-2b255f596bb7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="95" width="100" height="23" uuid="117cf474-d2ef-451c-830f-f44a3cc74411"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="46" width="85" height="26" uuid="49c17ce9-9c03-405b-b308-8da5e3c2c643"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroLiq}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="353" y="10" width="89" height="23" uuid="5e3f9a7c-8361-4c77-bee7-3f19c09d37c7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha actual:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="442" y="8" width="113" height="25" uuid="6a70dd89-583b-40f1-abf2-a7b81a8b9c99"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="141" height="24" backcolor="#999999" uuid="09208a51-64ec-4a60-9cd9-ea5d32a2af4d"/>
+				<box>
+					<pen lineWidth="3.0"/>
+					<topPen lineWidth="3.0"/>
+					<leftPen lineWidth="3.0"/>
+					<bottomPen lineWidth="3.0"/>
+					<rightPen lineWidth="3.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="214" y="0" width="133" height="24" backcolor="#999999" uuid="d753fd76-ab74-454f-96ec-0330227d424e"/>
+				<box>
+					<pen lineWidth="3.0"/>
+					<topPen lineWidth="3.0"/>
+					<leftPen lineWidth="3.0"/>
+					<bottomPen lineWidth="3.0"/>
+					<rightPen lineWidth="3.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total rendido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="347" y="0" width="92" height="24" backcolor="#999999" uuid="19bf0121-51dc-43c8-8c40-a45145ed250d"/>
+				<box>
+					<pen lineWidth="3.0"/>
+					<topPen lineWidth="3.0"/>
+					<leftPen lineWidth="3.0"/>
+					<bottomPen lineWidth="3.0"/>
+					<rightPen lineWidth="3.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descuento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="439" y="0" width="116" height="24" backcolor="#999999" uuid="f9ff2623-2857-4c6a-9149-57434524a0bf"/>
+				<box>
+					<pen lineWidth="3.0"/>
+					<topPen lineWidth="3.0"/>
+					<leftPen lineWidth="3.0"/>
+					<bottomPen lineWidth="3.0"/>
+					<rightPen lineWidth="3.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Total liquidado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="141" y="0" width="73" height="24" backcolor="#999999" uuid="6241a3f2-aa49-40d9-911e-7ace00a3b4e9"/>
+				<box>
+					<pen lineWidth="3.0"/>
+					<topPen lineWidth="3.0"/>
+					<leftPen lineWidth="3.0"/>
+					<bottomPen lineWidth="3.0"/>
+					<rightPen lineWidth="3.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Función]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="140" height="20" uuid="f7aad234-b3af-4815-a17a-4504d5bb1d39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaLiquidado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="0" width="116" height="20" uuid="9a2c52c5-9ddd-45b9-966f-b68f51298e95"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalRendido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="347" y="0" width="92" height="20" uuid="8c35c863-a15d-40c2-8b67-c1674fa6a8ae"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{porcentaje}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="80" height="20" uuid="d7decb0f-7dce-4430-ae8e-d7beaa110c2d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="73" height="20" uuid="a2bf8a0d-362d-4e50-938c-c57ab3b3ea3e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{funcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="194" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="151" width="555" height="41" backcolor="#0099CC" uuid="916f4f14-2c72-4138-8416-fafc3c48de94"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="151" width="79" height="43" uuid="59e2bee9-5c92-48d6-a78f-2cfbb3746d7c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="439" y="151" width="116" height="41" uuid="4aa40e27-b021-42b3-a420-fe483db7ab5a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="124" y="53" width="431" height="1" uuid="b1ba1cbe-e988-4a07-b343-136f8aaefac4"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="2" y="34" width="122" height="20" uuid="da268b3e-7c37-4e26-bbd4-757914e318b9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma Empleador:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AccesosSistema" language="groovy" pageWidth="720" pageHeight="842" columnWidth="680" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8aa1e3fe-1a7a-4452-99da-c0a0e85e5ccd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="26"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="direccionEmpresa" class="java.lang.String"/>
+	<parameter name="nombreEmpresa" class="java.lang.String"/>
+	<parameter name="logo" class="Clases.Foto"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="operario" class="java.lang.String"/>
+	<parameter name="paisprovincia" class="java.lang.String"/>
+	<parameter name="telefonoEmpresa" class="java.lang.String"/>
+	<parameter name="fechaDesde" class="java.lang.String"/>
+	<parameter name="fechaHasta" class="java.lang.String"/>
+	<field name="usuario" class="java.lang.String"/>
+	<field name="fechaInicio" class="java.lang.String"/>
+	<field name="fechaFin" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="681" height="92" uuid="1f65a370-0bec-47d8-b6c5-04cd144cc767"/>
+			</rectangle>
+			<image scaleImage="FillFrame">
+				<reportElement x="557" y="7" width="121" height="81" uuid="6369ca96-9d9a-47a7-9968-8bac132e8fda"/>
+				<imageExpression><![CDATA[$P{logo}.getImage()]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="1" y="34" width="347" height="27" uuid="7fb0c2ba-be6b-41ef-8d73-2654b3fd31b0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Gill Sans MT" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Historial de Accesos al Sistema]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="27" width="153" height="20" uuid="e5b6d240-c027-4c65-b38f-eb1016ad4db9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{direccionEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="67" width="100" height="20" uuid="ae069ed2-c54d-4bc5-9e61-baea86615ecc"/>
+				<textElement>
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{paisprovincia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="394" y="47" width="26" height="20" uuid="47b37e57-cff9-42da-8938-b4ad79d8cc10"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Tel:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="47" width="127" height="20" uuid="cd66691f-356a-4ef3-8514-f32b6f9a1d27"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{telefonoEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="7" width="127" height="20" uuid="80961a8b-6f2f-4815-ae17-374749c37c07"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="3" width="66" height="32" uuid="655ae948-f061-4e48-b165-3180d796385c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Operario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="570" y="3" width="108" height="31" uuid="79b4755e-db81-4940-a460-13b954fa24bb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="3" width="100" height="32" uuid="1be5b58e-b048-44c0-b7ab-fcf39daf4e2c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{operario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="475" y="3" width="95" height="31" uuid="7b51c104-e94f-4e0f-9060-5daa2b24f80b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha actual:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="87" y="39" width="94" height="34" uuid="7e0131dd-9064-4557-97f4-5eceeeadf640"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaDesde}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="181" y="39" width="84" height="34" uuid="59cccc11-7706-48bc-9599-4bf061d84dff">
+					<printWhenExpression><![CDATA[$P{fechaHasta}!= null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha hasta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="39" width="86" height="34" uuid="3caeeaa2-a22b-49fd-8ba0-8ac63695c51d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha desde:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="265" y="39" width="100" height="34" uuid="d60598cc-34d1-46c8-b15f-75d32151d670">
+					<printWhenExpression><![CDATA[$P{fechaHasta} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaHasta}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="35" width="680" height="1" uuid="1e3b0aa8-60a4-4a19-a095-7c5ba5998254"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="0" width="224" height="20" backcolor="#999999" uuid="96edd934-71c2-45c4-bcf5-0a125559ca03"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="225" y="0" width="185" height="20" backcolor="#999999" uuid="707fd2bf-15eb-45d0-bc29-e16deb878431"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha-Hora de inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="410" y="0" width="170" height="20" backcolor="#999999" uuid="f552cd5a-3288-4dc5-8850-2edb9da2a92d"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha-Hora de finalización]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="580" y="0" width="101" height="20" backcolor="#999999" uuid="e69be818-4d35-4b01-a4d6-567fb208b028"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de horas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="210" height="20" uuid="e57a0253-fae3-455e-b8ee-bf4ce4eb19d3"/>
+				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="0" width="173" height="20" uuid="cba3c17a-6ae4-40e7-be5b-b605a1fed36c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{fechaInicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="157" height="20" uuid="5cc487e6-eb56-442f-8654-87d1531784e8"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{fechaFin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="594" y="0" width="77" height="20" uuid="6aa71279-87d0-485d-bb2f-70c18bfdcac2"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="558" y="34" width="80" height="20" uuid="e14ad9b4-6725-4288-9825-86a8ada9717e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="638" y="34" width="40" height="20" uuid="6da6bb6e-81e7-4907-997b-9f2d6845940b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

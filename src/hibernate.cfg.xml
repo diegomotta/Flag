@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Remiseria</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">lagarto</property>
+    <property name="show_sql">false</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="connection.pool_size">1</property>
+    <mapping class="Clases.Remiseria"/>
+    <mapping class="Clases.ChoferPorMovil"/>
+    <mapping class="Clases.Chofer"/>
+    <mapping class="Clases.Cliente"/>
+    <mapping class="Clases.Operario"/>
+    <mapping class="Clases.Persona"/>
+    <mapping class="Clases.Movil"/>
+    <mapping class="Clases.Viaje"/>
+    <mapping class="Clases.Zona"/>
+    <mapping class="Clases.Tarifa"/>
+    <mapping class="Clases.Reserva"/>
+    <mapping class="Clases.Movimiento"/>
+    <mapping class="Clases.CuentaCorriente"/>
+    <mapping class="Clases.Marca"/>
+    <mapping class="Clases.Motor"/>
+    <mapping class="Clases.Modelo"/>
+    <mapping class="Clases.Color"/>
+    <mapping class="Clases.TipoUtilidad"/>
+    <mapping class="Clases.Rodado"/>
+    <mapping class="Clases.TipoDni"/>
+    <mapping class="Clases.Nacionalidad"/>
+    <mapping class="Clases.Pais"/>
+    <mapping class="Clases.Provincia"/>
+    <mapping class="Clases.Barrio"/>
+    <mapping class="Clases.Ciudad"/>
+    <mapping class="Clases.Domicilio"/>
+    <mapping class="Clases.EstadoCivil"/>
+    <mapping class="Clases.Sexo"/>
+    <mapping class="Clases.Telefono"/>
+    <mapping class="Clases.TipoTelefono"/>
+    <mapping class="Clases.CodPais"/>
+    <mapping class="Clases.CodArea"/>
+    <mapping class="Clases.MovilPorZona"/>
+    <mapping class="Clases.Rol"/>
+    <mapping class="Clases.Permisos"/>
+    <mapping class="Clases.Caja"/>
+    <mapping class="Clases.Concepto"/>
+    <mapping class="Clases.Lote"/>
+    <mapping class="Clases.Configuracion"/>
+    <mapping class="Clases.Maestro"/>
+    <mapping class="Clases.UtilidadViaje"/>
+    <mapping class="Clases.DireccionViaje"/>
+    <mapping class="Clases.Edad"/> 
+    <mapping class="Clases.Foto"/>       
+    <mapping class="Clases.Rendicion"/> 
+    <mapping class="Clases.PorcentajeChofer"/>   
+    <mapping class="Clases.PrecioAlquiler"/>   
+    <mapping class="Clases.PagoOperario"/>  
+    <mapping class="Clases.Liquidacion"/>      
+    <mapping class="Clases.MarcarTarjeta"/> 
+    <mapping class="Clases.BajadaBandera"/> 
+    <mapping class="Clases.CierreKilometraje"/>     
+    <mapping class="Clases.Dias"/>   
+    <mapping class="Clases.Cargo"/> 
+    <mapping class="Clases.KilometrosEnServicio"/>   
+    <mapping class="Clases.KilometrosRecorridos"/>  
+    <mapping class="Clases.Cargo"/>   
+    <mapping class="Clases.PagoRadio"/> 
+    <mapping class="Log_Auditoria.Entidad_Revisada"/>
+    <mapping class="Log_Auditoria.Auditoria_Operacional"/>
+    <mapping class="Clases.TiempoEspera"/>
+    <mapping class="Clases.TiempoEspera2"/>
+   
+   
+    
+    <listener class="org.hibernate.envers.event.AuditEventListener" type="post-insert"/>
+    <listener class="org.hibernate.envers.event.AuditEventListener" type="post-update"/>
+    <listener class="org.hibernate.envers.event.AuditEventListener" type="post-delete"/>
+    <listener class="org.hibernate.envers.event.AuditEventListener" type="pre-collection-update"/>
+    <listener class="org.hibernate.envers.event.AuditEventListener" type="pre-collection-remove"/>
+    <listener class="org.hibernate.envers.event.AuditEventListener" type="post-collection-recreate"/>
+    
+
+  </session-factory>
+</hibernate-configuration>

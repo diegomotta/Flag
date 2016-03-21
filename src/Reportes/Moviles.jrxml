@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Moviles" language="groovy" pageWidth="800" pageHeight="842" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ca8b6aa4-a3da-4c6a-8de2-97a4ecb1594c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="125"/>
+	<property name="ireport.y" value="14"/>
+	<parameter name="operario" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="logo" class="Clases.Foto"/>
+	<parameter name="nombreEmpresa" class="java.lang.String"/>
+	<parameter name="direccionEmpresa" class="java.lang.String"/>
+	<parameter name="telefonoEmpresa" class="java.lang.String"/>
+	<parameter name="paisprovincia" class="java.lang.String"/>
+	<field name="numero" class="java.lang.String"/>
+	<field name="patente" class="java.lang.String"/>
+	<field name="año" class="java.lang.String"/>
+	<field name="unaMarca" class="java.lang.String"/>
+	<field name="unModelo" class="java.lang.String"/>
+	<field name="unMotor" class="java.lang.String"/>
+	<field name="unColor" class="java.lang.String"/>
+	<field name="unTipoUtilidad" class="java.lang.String"/>
+	<field name="unRodado" class="java.lang.String"/>
+	<field name="kilometro" class="java.lang.String"/>
+	<field name="aireAcondicionado" class="java.lang.String"/>
+	<field name="capacidadCarga" class="java.lang.String"/>
+	<field name="alquilado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="760" height="92" uuid="ae04578c-5dcd-44f2-a839-6b490be0f725"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="34" width="347" height="27" uuid="44c53baa-071a-4332-9c71-e57c81511556"/>
+				<textElement textAlignment="Center">
+					<font fontName="Gill Sans MT" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Lista de Móviles]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="630" y="7" width="121" height="81" uuid="b33b0958-c196-467b-96ae-c0df43ebb4af"/>
+				<imageExpression><![CDATA[$P{logo}.getImage()]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="467" y="7" width="127" height="20" uuid="9784b6d8-42ba-4ff2-86cd-8055dcb4caa1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="493" y="47" width="127" height="20" uuid="1e2dcf1d-7557-45f1-9161-759cda1d98ad"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{telefonoEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="27" width="153" height="20" uuid="0985c883-7018-4102-864b-43e7d452ea1d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{direccionEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="67" width="100" height="20" uuid="94401e8f-d628-4a22-80d5-858bfc7ecea3"/>
+				<textElement>
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{paisprovincia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="467" y="47" width="26" height="20" uuid="334b8c4b-0ada-45f1-9a16-155954496722"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Tel:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="557" y="0" width="95" height="32" uuid="d145ed5f-a848-46a6-b1a4-49cca95f84a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha actual:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="66" height="32" uuid="784dcfda-025b-40c5-9241-c629fcb00a78"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Operario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="652" y="2" width="108" height="30" uuid="cc539519-15a6-4d82-8c03-a5150c81179b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="2" width="100" height="30" uuid="1b8eca5d-86dc-4809-a060-58f579af9ef9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gill Sans MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{operario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="0" width="45" height="20" backcolor="#999999" uuid="063a1851-9c9d-4245-b5cc-f1d41e1d583c"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Móvil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="46" y="0" width="59" height="20" backcolor="#999999" uuid="b7a9e149-8a77-4ef7-b36b-a76390f98e85"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="105" y="0" width="31" height="20" backcolor="#999999" uuid="e36a10ed-63c4-447c-afec-3a79c04d2515"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="136" y="0" width="57" height="20" backcolor="#999999" uuid="1312434c-611b-476b-858e-f03a861467db"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="193" y="0" width="50" height="20" backcolor="#999999" uuid="7c50d9e6-1d57-4b46-81bc-00306e13cc93"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="243" y="0" width="53" height="20" backcolor="#999999" uuid="7989d769-7f79-460c-bcd9-d39d855307dc"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="296" y="0" width="52" height="20" backcolor="#999999" uuid="5a06d4aa-242e-4c94-8173-17596ddd9215"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Color]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="348" y="0" width="58" height="20" backcolor="#999999" uuid="53090ac7-7699-42bc-b526-29ccabff4a53"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Utilidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="406" y="0" width="58" height="20" backcolor="#999999" uuid="856c2133-9a0e-4c21-bd4d-061309b222d0"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rodado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="464" y="0" width="90" height="20" backcolor="#999999" uuid="487499e2-950c-4198-b54b-82fc9febeae1"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kilometraje actual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="554" y="0" width="90" height="20" backcolor="#999999" uuid="99f04fe1-5368-41ae-895b-c5c092e7603e"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aire aconcionado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="644" y="0" width="58" height="20" backcolor="#999999" uuid="62c91b15-5e52-4f9d-85ee-808949bf9565"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Capacidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="702" y="0" width="58" height="20" backcolor="#999999" uuid="3c50de58-70de-474d-b9f7-52ad7d524d81"/>
+				<box>
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alquilado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="46" y="0" width="48" height="20" uuid="ea90e906-ceb1-4201-a54a-f045fd1eed48"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{patente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="0" width="31" height="20" uuid="1635e098-2c12-45f4-9c2c-8bd04aceebe9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="0" width="47" height="20" uuid="b7cc24b9-b2c0-447b-8b8f-3a37d1b0f96b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unaMarca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="0" width="40" height="20" uuid="c50caefa-39b4-4b47-bc12-767f9122cdf6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unModelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="0" width="42" height="20" uuid="86536a6f-5f75-4b9c-9857-79aa01e6151a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unMotor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="0" width="42" height="20" uuid="4f4950c6-6f8c-4ff6-8de0-523d682f0644"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unColor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="358" y="0" width="48" height="20" uuid="3042c631-03a7-4bc7-b613-1b7f55f8db66"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unTipoUtilidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="48" height="20" uuid="52f83a39-b47f-4f9a-a0e8-8cde957380ad"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unRodado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="0" width="80" height="20" uuid="887163d6-7849-4ee7-902e-7b316cb439de"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kilometro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="0" width="77" height="20" uuid="2c12c699-ab4c-43fc-8c89-68008617b459"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{aireAcondicionado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="644" y="0" width="47" height="20" uuid="c96753aa-40c4-43eb-ac75-f465aa49e539"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{capacidadCarga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="712" y="0" width="48" height="20" uuid="42a96601-1eb2-49f5-9a08-2b948822b6c3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alquilado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="1" width="35" height="20" uuid="c3091ab5-ae91-4200-bd51-620c8de88d75"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="720" y="34" width="40" height="20" uuid="a2887efd-101c-49da-b7ac-93a2c2981ba3"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="34" width="80" height="20" uuid="1c9c7c9c-f6f4-4e99-8e4e-4887f2e2a539"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
